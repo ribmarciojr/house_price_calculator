@@ -55,8 +55,8 @@ poetry.lock
 *.joblib
 
 # Data files (large datasets)
-*.csv
 dataset.csv
+houses_with_clusters.csv
 
 # Logs
 *.log

@@ -1,4 +1,13 @@
-# API de Previsão de Preços de Casas - Docker
+# API de Previsão de Preços de Casas
+
+# Dados de Entrada
+
+<img width="1922" height="1080" alt="image" src="https://github.com/user-attachments/assets/915341fb-c883-495d-8019-1538fbd2a279" />
+
+# Previsão do modelo
+
+<img width="1909" height="994" alt="image" src="https://github.com/user-attachments/assets/d682a631-ab27-4563-ba7a-9b474b2d6925" />
+
 
 ## 📦 Requisitos
 

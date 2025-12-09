@@ -1,0 +1,52 @@
+# Arquivos Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Logs
+logs/
+*.log
+
+# Arquivos de dados (exceto modelo)
+dataset.csv
+houses.csv
+houses_with_clusters.csv
+*.csv
+
+# Imagens geradas
+*.png
+*.jpg
+*.jpeg
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Frontend
+im-vel-predictor/
+node_modules/
+
+# Documentação temporária
+API_FIXES.md
+
+# Scripts de teste
+test_api.py
+test_api.sh
+start_api.sh
+analysis/
+kmeans_analysis.py
+model_training.py

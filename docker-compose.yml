@@ -1,0 +1,31 @@
+services:
+  api:
+    build: .
+    container_name: house-price-api
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./random_forest_model.pkl:/app/random_forest_model.pkl:ro
+      - ./feature_info.pkl:/app/feature_info.pkl:ro
+    restart: unless-stopped
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import requests; requests.get('http://localhost:8000/health')",
+        ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    networks:
+      - api-network
+
+networks:
+  api-network:
+    driver: bridge

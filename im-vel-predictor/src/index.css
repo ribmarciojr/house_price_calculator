@@ -1,0 +1,205 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 222 47% 20%;
+    --primary-foreground: 45 93% 95%;
+
+    --secondary: 45 93% 58%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 20% 94%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 45 93% 58%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 222 47% 20%;
+
+    --radius: 0.75rem;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --gold: 45 93% 58%;
+    --gold-light: 45 93% 85%;
+    --gold-dark: 45 80% 40%;
+
+    --navy: 222 47% 20%;
+    --navy-light: 222 30% 40%;
+    --navy-dark: 222 60% 12%;
+
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222 47% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 45 93% 58%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 222 30% 25%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 222 30% 20%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 45 93% 58%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 30% 20%;
+    --input: 222 30% 20%;
+    --ring: 45 93% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .gradient-gold {
+    background: linear-gradient(135deg, hsl(var(--gold)) 0%, hsl(var(--gold-dark)) 100%);
+  }
+
+  .gradient-navy {
+    background: linear-gradient(135deg, hsl(var(--navy)) 0%, hsl(var(--navy-dark)) 100%);
+  }
+
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-sm border border-border/50 shadow-lg;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground 
+           placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 
+           focus:border-primary transition-all duration-200;
+  }
+
+  .label-text {
+    @apply block text-sm font-medium text-foreground mb-2;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 rounded-lg font-medium text-primary-foreground gradient-navy
+           hover:opacity-90 transition-all duration-200 shadow-md hover:shadow-lg
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 rounded-lg font-medium text-secondary-foreground gradient-gold
+           hover:opacity-90 transition-all duration-200 shadow-md hover:shadow-lg;
+  }
+
+  .section-title {
+    @apply text-lg font-semibold text-foreground mb-4 flex items-center gap-2;
+  }
+
+  .result-card {
+    @apply p-6 rounded-2xl gradient-navy text-primary-foreground shadow-xl;
+  }
+
+  .confidence-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .toggle-option {
+    @apply flex items-center justify-between p-4 rounded-lg border border-input bg-background
+           hover:border-primary/50 transition-all duration-200 cursor-pointer;
+  }
+
+  .toggle-option.active {
+    @apply border-primary bg-primary/5;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+  }
+
+  .animate-pulse-subtle {
+    animation: pulseSubtle 2s ease-in-out infinite;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pulseSubtle {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+}

@@ -50,7 +50,6 @@ poetry.lock
 .DS_Store
 
 # Machine Learning Models
-*.pkl
 *.h5
 *.model
 *.joblib
@@ -58,7 +57,6 @@ poetry.lock
 # Data files (large datasets)
 *.csv
 dataset.csv
-houses.csv
 
 # Logs
 *.log
@@ -67,12 +65,8 @@ api.log
 nohup.out
 
 # Images and plots (generated)
-*.png
 *.jpg
 *.jpeg
-correlation_heatmap.png
-feature_importance.png
-predictions_analysis.png
 
 # Environment variables
 .env
